@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/Base.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <span class="navbar-brand mb-0 h1">FOOTBALL PLAYERS LIST</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Log out <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Home">Home</a>
+                            <a class="dropdown-item" href="/AddPlayers">Add Players</a>
+                            <a class="dropdown-item" href="/ViewPlayers">View Players</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search.." aria-label="Search">
+                    <button class="btn btn-outline-dark text-white my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    </body>
+</html>

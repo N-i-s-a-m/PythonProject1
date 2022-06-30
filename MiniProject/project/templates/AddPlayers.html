@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>Add Players</title>
+        {% extends "Base.html" %}
+        {% block content %}
+    </head>
+        <body align="center" background="/static/Background.jpg">
+        <br>
+            <p align="center"><font face="arial black" color="black" size="6">ADD PLAYERS HERE</font></p>
+        <br>
+            <form action = "/AddConfirm" method = "POST">
+                <table align="center">
+                    <tr>
+                        <th>Player ID</th>
+                        <th><input type = "text" class="form-control" name = "plyid" /></th>
+                    </tr>
+                    <tr>
+                        <th>Full Name</th>
+                        <th><input type = "text" class="form-control" name = "plyname" /></th>
+                    </tr>
+                    <tr>
+                        <th>Club</th>
+                        <th> <input type = "text" class="form-control" name = "plyclub" /></th>
+                    </tr>
+                    <tr>
+                        <th>Nationality</th>
+                        <th> <input type = "text" class="form-control" name = "plynatio" /></th>
+                    </tr>
+                    <tr>
+                        <th>Position</th>
+                        <th> <input type = "text" class="form-control" name = "plyposi" /></th>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <th> <input type = "text" class="form-control" name = "plyage" /></th>
+                    </tr>
+                </table>
+                    <br>
+                <p align="center">
+                    <button style="background-color:e5e4e2; border-color:black; padding: 5px 30px; color:black">Submit</button>
+                    <button style="background-color:e5e4e2; border-color:black; padding: 5px 30px; color:black" type="reset"> Reset</button>
+                </p>
+            </form>
+            {% endblock %}
+        </body>
+</html>

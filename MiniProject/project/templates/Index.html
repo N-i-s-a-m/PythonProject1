@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Index Page</title>
+        <link rel="stylesheet" href="/static/Index.css">
+    </head>
+    <body background="/static/Background.jpg">
+        <div class="main">
+            <marquee>
+                <script>
+                    var DateTime=new Date();
+                    document.write(DateTime);
+                </script>
+            </marquee>
+            <input type="checkbox" id="chk" aria-hidden="true">
+            <div class="signup">
+                <form name="signup" action="/Home" onsubmit="return SignupValidation()">
+                    <p align="center">
+                        <img src="/static/Logo.jpg" height="60" width="60" alt="Logo"/>
+                    </p>
+                    <label for="chk" aria-hidden="true">Sign up</label>
+                    <input type="text" name="username1" placeholder="Username">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password1" placeholder="Password">
+                    <button type="submit">Sign up</button>
+                    <button type="reset"> Reset</button>
+                </form>
+            </div>
+            <script>
+                function SignupValidation()
+                {
+                   var Name=document.signup.username1.value;
+                   var Password=document.signup.password1.value;
+                   var Email=document.signup.email.value
+                   var At=Email.indexOf("@");
+                   var Dot=Email.lastIndexOf(".");
+
+                   if ( Name == null || Name == "")
+                   {
+                      alert("Name can't be blank");
+                      return false;
+                   }
+
+                   else if ( At < 1 || Dot < At+2 || Dot+2 >= Email.length )
+                   {
+                      alert("Please enter a valid e-mail address");
+                      return false;
+                   }
+
+                   else if ( Password.length <6 )
+                   {
+                      alert("password must be at least 6 characters long.");
+                      return false;
+                   }
+
+                   else
+                   {
+                      return true;
+                   }
+                }
+            </script>
+            <div class="login">
+                <form name="login" action="/Home" onsubmit="return LoginValidation()">
+                    <label for="chk" aria-hidden="true">Login</label>
+                    <input type="text" name="username2" placeholder="Username">
+                    <input type="password" name="password2" placeholder="Password">
+                    <button type="submit">Login</button>
+                    <button type="reset"> Reset</button>
+                </form>
+                <script>
+                    function LoginValidation()
+                    {
+                       var Name=document.login.username2.value;
+                       var Password=document.login.password2.value;
+
+                       if ( Name == null || Name == "" )
+                       {
+                          alert("Name can't be blank");
+                          return false;
+                       }
+
+                       else if ( Password.length <6 )
+                       {
+                          alert("password must be at least 6 characters long.");
+                          return false;
+                       }
+
+                       else
+                       {
+                          return true;
+                       }
+                    }
+                </script>
+                <div class="footer">
+                    <a href="" onclick="ForgetPassword()">Forgot Password?</a>
+                    <script>
+                        function ForgetPassword()
+                        {
+                        var password=prompt("Enter the new Password, atleast 6 character");
+
+                            if ( password.length <6 )
+                            {
+                               alert("Password must be at least 6 characters long.");
+                               return ForgetPassword();
+                            }
+
+                            else
+                            {
+                               alert("Password has been changed");
+                               return true;
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>Update player</title>
+        {% extends "Base.html" %}
+        {% block content %}
+    </head>
+    <body background="/static/Background.jpg">
+    <br>
+        <p align="center"><font face="arial black" color="black" size="6">Update Player Details</font></p>
+    <br/>
+        <form action = "/UpdatePlayer" method = "POST">
+            <table align="center" >
+                <tr>
+                    <th>Player ID</th>
+                    <th><input type = "text" class="form-control" name = "plyid" value= "{{data[0]}}" readonly/></th>
+                </tr>
+                <tr>
+                    <th>Full Name</th>
+                    <th><input type = "text" class="form-control" name = "plyname" value= "{{data[1]}}"/></th>
+                </tr>
+                <tr>
+                    <th>Club</th>
+                    <th> <input type = "text" class="form-control" name = "plyclub" value= "{{data[2]}}"/></th>
+                </tr>
+                <tr>
+                    <th>Nationality</th>
+                    <th> <input type = "text" class="form-control" name = "plynatio" value= "{{data[3]}}"/></th>
+                </tr>
+                <tr>
+                    <th>Position</th>
+                    <th> <input type = "text" class="form-control" name = "plyposi" value= "{{data[4]}}"/></th>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <th> <input type = "text" class="form-control" name = "plyage" value= "{{data[5]}}"/></th>
+                </tr>
+            </table>
+            <br>
+                <p align="center">
+                    <button style="background-color:e5e4e2; border-color:black; padding: 5px 30px; color:black">Submit</button>
+                </p>
+        </form>
+        {% endblock %}
+   </body>
+</html>

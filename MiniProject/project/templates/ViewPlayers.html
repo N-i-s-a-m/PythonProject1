@@ -1,0 +1,74 @@
+<html>
+    <head>
+        {% extends "Base.html" %}
+        {% block content %}
+        <title>View List</title>
+        <style>
+            #mystyle {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+            #mystyle td, #mystyle th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            }
+            #mystyle tr:nth-child(even){background-color: #f2f2f2;}
+            #mystyle tr:hover {background-color: #ddd;}
+            #mystyle th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #04AA6D;
+            color: white;
+            }
+        </style>
+            <script>
+                function Verify()
+                {
+                    var page=confirm("Do you want to continue");
+
+                    if ( page == true )
+                    {
+                        window.location.href="#";
+                    }
+
+                    else
+                    {
+                        window.location.href="/NotCont";
+                    }
+                }
+            </script>
+    </head>
+    <body background="/static/Background.jpg">
+    <br>
+    <p align="center"><font face="arial black" color="black" size="6">THE TABLE OF INSERTED DATA</font></p>
+        <table id="mystyle" align="center">
+            <tr align="center">
+                <th>PLAYER ID</th>
+                <th>PLAYER NAME</th>
+                <th>PLAYER CLUB</th>
+                <th>PLAYER NATIONALITY</th>
+                <th>PLAYER POSITION</th>
+                <th>PLAYER AGE</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </tr>
+            {% for player in data %}
+            <tr align="center">
+                <td>{{player[0]}}</td>
+                <td>{{player[1]}}</td>
+                <td>{{player[2]}}</td>
+                <td>{{player[3]}}</td>
+                <td>{{player[4]}}</td>
+                <td>{{player[5]}}</td>
+                <td><a href="/PlayerUpdate/{{player[0]}}">Upadte</a></td>
+                <td><a href="/PlayerDelete/{{player[0]}}" onclick="Verify()">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br/>
+        <h3 align="center"><a href="/Home">GO HOME</a></h3>
+        {% endblock %}
+    </body>
+</html>
